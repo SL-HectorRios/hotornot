@@ -38,7 +38,7 @@ hotOrNot.data = (function() {
     rightSide.classList.add('rightSide');
 
     // TODO start & end dates
-    var attributesToParse = ['originalDeal', 'deal', 'additionalDealInformation', 'finePrint'];
+    var attributesToParse = ['originalDeal', 'deal', 'additionalDealInformation'];
 
     // adds all the fields to the right side
     for (var i = 0, limit = attributesToParse.length, attribute; i < limit; i++) {

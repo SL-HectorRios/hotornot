@@ -169,18 +169,15 @@ footer {
 #ListingContain img {
     /**/
 }
-#ListingContain .listingWasPrice {
+#ListingContain .originalDeal {
     text-decoration: line-through;
     font-size: 12px;
 }
-#ListingContain .listingPrice {
+#ListingContain .deal {
     font-size: 24px;
     font-weight: bold
 }
-#ListingContain .listingPQ {
-    font-size: 12px;
-}
-#ListingContain .listingADD {
+#ListingContain .additionalDealInformation {
     font-size: 12px;
 }
 #ListingContain .listingValid {
