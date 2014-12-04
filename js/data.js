@@ -89,8 +89,10 @@ hotOrNot.data = (function() {
         hasThisListing = true;
     }
 
-    if (!hasThisListing)
+    if (!hasThisListing) {
       listingsLiked.push(listingHash);
+      $.cookie('listingsLiked', JSON.stringify(listingsLiked));
+    }
   };
 
   var getLikedListings = function() {
