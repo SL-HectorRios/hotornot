@@ -108,12 +108,36 @@ footer {
 }
 /* Hot or Not
    ========================================================================== */
-   #RateHotorNot .instructions .leftSide, 
-   #RateHotorNot .instructions .rightSide {
-    width:50%;
-    float:left;
-   }
 
+#RateHotorNot .instructions .leftSide,
+#RateHotorNot .instructions .rightSide {
+    width: 50%;
+    float: left;
+}
+#ListingContain ul {
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+#ListingContain li {
+    height: 300px;
+    width: 300px;
+    padding:5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#ListingContain img {
+    width:100%;
+}
+#ListingContain .leftSide {
+    width:100px;
+    float:left;
+} 
+#ListingContain .rightSide {
+    width:180px;
+    float:left;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
