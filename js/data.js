@@ -21,15 +21,39 @@ hotOrNot.data = (function() {
   var appendListing = function(listing) {
     var li = document.createElement('li');
     var img = document.createElement('img');
+    var h2 = document.createElement('h2');
+    h2.textContent = listing['title'];
 
-    li.setAttribute('data-listingid', listing['id']);
-    li.setAttribute('data-department', listing['departments'][0]['id'] );
-    li.setAttribute('data-deal', listing['deal']);
-    li.setAttribute('data-originaldeal', listing['originalDeal']);
-    li.classList.add('listingCard');
+    var div = document.createElement('div');
+    var clearFix = div.cloneNode();
+    var leftSide = div.cloneNode();
+    var rightSide = div.cloneNode();
 
+    clearFix.classList.add('clearfix');
+
+    leftSide.classList.add('leftSide');
     img.setAttribute('src', listing['images'][0]['imageURL']);
-    li.appendChild(img);
+    leftSide.appendChild(img);
+
+    rightSide.classList.add('rightSide');
+
+    // TODO start & end dates
+    var attributesToParse = ['originalDeal', 'deal', 'additionalDealInformation', 'finePrint'];
+
+    // adds all the fields to the right side
+    for (var i = 0, limit = attributesToParse.length, attribute; i < limit; i++) {
+      attribute = attributesToParse[i];
+      var field = div.cloneNode();
+      field.classList.add(attribute);
+      field.textContent = listing[attribute];
+      rightSide.appendChild(field);
+    }
+
+    clearFix.appendChild(leftSide);
+    clearFix.appendChild(rightSide);
+
+    li.appendChild(h2);
+    li.appendChild(clearFix);
 
     listingList.appendChild(li);
   };
