@@ -86,25 +86,30 @@ textarea {
    ========================================================================== */
 
 body {
-    background: #eee;
+    background: #dedede;
 }
 #SiteContain {
     width: 320px;
     margin: 0 auto;
-    background: white;
     -webkit-box-shadow: 0 0 4px 1px rgba(0, 0, 0, .4);
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, .4);
 }
 header {
-    height: 120px;
-    background: #ccc;
+    height: 127px;
+    background: url(../img/gandermtnHeader.png) top left no-repeat;
 }
 footer {
-    height: 120px;
-    background: #ccc;
+    height: 113px;
+    background: url(../img/gandermtnFooter.png) top left no-repeat;
 }
 #MainContent {
-    padding: 8px;
+    margin: 10px;
+	background: white;
+}
+
+#BBPHome {
+    background: url(../img/gandermtnBBPHome.png) top left no-repeat;
+	height: 334px;
 }
 /* Hot or Not
    ========================================================================== */
