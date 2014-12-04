@@ -221,8 +221,9 @@ footer {
 	background: url(../img/email-icon.png) 5px 5px no-repeat, -webkit-linear-gradient(top,  #317762 0%,#00573d 100%); /* Chrome10+,Safari5.1+ */
 	background: url(../img/email-icon.png) 5px 5px no-repeat, -o-linear-gradient(top,  #317762 0%,#00573d 100%); /* Opera 11.10+ */
 	background: url(../img/email-icon.png) 5px 5px no-repeat, -ms-linear-gradient(top,  #317762 0%,#00573d 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #317762 0%,#00573d 100%); /* W3C */
+	background: url(../img/email-icon.png) 5px 5px no-repeat, linear-gradient(to bottom,  #317762 0%,#00573d 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#317762', endColorstr='#00573d',GradientType=0 ); /* IE6-9 */
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, .4);
 	border: 2px solid #00573c;
 	padding: 5px;
 	width: 22px;
