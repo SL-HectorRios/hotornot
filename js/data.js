@@ -5,6 +5,7 @@ var hotOrNot = hotOrNot || {};
 hotOrNot.data = (function() {
   var allListings = [];
   var listingList = document.getElementById('listingList');
+  var listingsLiked = [];
 
   var insertListings = function(listings) {
     if (!listings || !Array.isArray(listings)) return;
@@ -55,6 +56,8 @@ hotOrNot.data = (function() {
     li.appendChild(h2);
     li.appendChild(clearFix);
 
+    li.setAttribute('data-listingid', listing['id']);
+    li.setAttribute('data-departmentid', listing['departments'][0]['id'])
     listingList.appendChild(li);
   };
 
@@ -69,13 +72,40 @@ hotOrNot.data = (function() {
     });
   };
 
+  var addToLikedList = function (listing) {
+    var listingId = listing.getAttribute('data-listingid');
+    var departmentId = listing.getAttribute('data-departmentid');
+    var listingHash = {
+      listingId: listingId,
+      departmentId: departmentId
+    };
+
+    var hasThisListing = false;
+    
+    for (var i = 0, length = listingsLiked.length; i < length; i++) {
+      if (hasThisListing) break;
+
+      if (listingHash['listingId'] === listingsLiked[i]['listingId'])
+        hasThisListing = true;
+    }
+
+    if (!hasThisListing)
+      listingsLiked.push(listingHash);
+  };
+
+  var getLikedListings = function() {
+    return listingsLiked;
+  };
+
   return {
     init: function() {
       ajaxListings();
     },
     allListings: function() {
       return allListings;
-    }
+    },
+    addToLikedList: addToLikedList,
+    listingsLiked: getLikedListings
   };
 })();
 

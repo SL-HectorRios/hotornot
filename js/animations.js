@@ -6,8 +6,6 @@ hotOrNot.animations = (function() {
     cards;
 
   var init = function () {
-    var listingsLiked = [];
-
     // Prepare the cards
     cards = [].slice.call(document.querySelectorAll('ul li'));
 
@@ -22,7 +20,7 @@ hotOrNot.animations = (function() {
     stack.on('throwout', function(e) {
       console.log('Throwout event!');
       if (e.throwDirection == gajus.Swing.Card.DIRECTION_RIGHT) {
-        listingsLiked.push(e.target);
+        $(document).trigger({ type: 'LISTING_LIKED', listing: e.target});
       }
     });
 
