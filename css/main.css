@@ -111,6 +111,12 @@ footer {
     background: url(../img/gandermtnBBPHome.png) top left no-repeat;
 	height: 334px;
 }
+.HotOrNotCallout {
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	padding: 10px;
+}
 /* Hot or Not
    ========================================================================== */
 
