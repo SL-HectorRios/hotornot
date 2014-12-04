@@ -12,7 +12,7 @@ http.createServer(function(request, response) {
 
   fs.exists(filename, function(doesExist) {
     if (!doesExist) {
-      response.writeHead(404, { 'Content-Type': 'text/mplain' });
+      response.writeHead(404, { 'Content-Type': 'text/plain' });
       response.write('404 Not Found\n');
       response.end();
       return;
