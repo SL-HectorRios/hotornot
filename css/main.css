@@ -135,6 +135,8 @@ footer {
 
 #RateHotorNot .instructions {
     padding: 10px;
+	font-size: 12px;
+	text-align: center;
 }
 #RateHotorNot .instructions .leftSide,
 #RateHotorNot .instructions .rightSide {
