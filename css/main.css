@@ -115,10 +115,10 @@ footer {
     height: 334px;
 }
 .HotOrNotCallout {
-	display: block;
-	text-decoration: none;
-	text-align: center;
-	padding: 10px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
 }
 /* Hot or Not
    ========================================================================== */
@@ -133,18 +133,25 @@ footer {
     text-align: center;
 }
 #ListingContain {
+    width: 280px;
     padding-bottom: 10px;
+    margin: 0 auto;
 }
 #ListingContain ul {
+    height:220px;
     margin: 0;
     padding: 0;
     list-style: none;
+    position:relative;
 }
 #ListingContain li {
     height: 220px;
-    width: 280px;
-    margin: 0 auto;
+    position:absolute;
+    top:0;
+    left:0;
     padding: 5px;
+    margin-bottom:10px;
+    background:white;
     border: 1px solid #999;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
