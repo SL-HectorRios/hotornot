@@ -133,13 +133,13 @@ footer {
 }
 /* End HoN header */
 
-#RateHotorNot .instructions {
+.instructions {
     padding: 10px;
 	font-size: 12px;
 	text-align: center;
 }
-#RateHotorNot .instructions .leftSide,
-#RateHotorNot .instructions .rightSide {
+.instructions .leftSide,
+.instructions .rightSide {
     width: 50%;
     float: left;
     text-align: center;
