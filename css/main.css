@@ -122,9 +122,9 @@ footer {
 }
 /* Hot or Not   ========================================================================== */
 /* HoN header */
-
 .hotBar h1 {
     display: inline-block;
+	padding: 10px;
 }
 .hotCount {
     display: inline-block;
@@ -229,6 +229,20 @@ footer {
 	width: 22px;
 	height: 22px;
 	cursor: pointer;
+}
+#recommendationCallout {
+	background: #00573c; /* Old browsers */
+	background: url(../img/email-icon.png) 5px 5px no-repeat, -moz-linear-gradient(top,  #317762 0%, #00573d 100%); /* FF3.6+ */
+	background: url(../img/email-icon.png) 5px 5px no-repeat, -webkit-gradient(linear, left top, left bottom, color-stop(0%,#317762), color-stop(100%,#00573d)); /* Chrome,Safari4+ */
+	background: url(../img/email-icon.png) 5px 5px no-repeat, -webkit-linear-gradient(top,  #317762 0%,#00573d 100%); /* Chrome10+,Safari5.1+ */
+	background: url(../img/email-icon.png) 5px 5px no-repeat, -o-linear-gradient(top,  #317762 0%,#00573d 100%); /* Opera 11.10+ */
+	background: url(../img/email-icon.png) 5px 5px no-repeat, -ms-linear-gradient(top,  #317762 0%,#00573d 100%); /* IE10+ */
+	background: url(../img/email-icon.png) 5px 5px no-repeat, linear-gradient(to bottom,  #317762 0%,#00573d 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#317762', endColorstr='#00573d',GradientType=0 ); /* IE6-9 */
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
 }
 /* End share options */
 /* recommendations
