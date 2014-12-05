@@ -20,8 +20,10 @@ $(function() {
     hotOrNot.data.loadListingsLiked();
 
   $(document).on('listingsLoaded', function() {
-    hotOrNot.animations.init();
+    if (!isListingsLikedPage())
+      hotOrNot.animations.init();
   });
+
   $(document).on('LISTING_LIKED', function(e) {
     if (e.listing)
       hotOrNot.data.addToLikedList(e.listing);
