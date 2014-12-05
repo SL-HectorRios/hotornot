@@ -125,8 +125,13 @@ footer {
 /* Hot or Not   ========================================================================== */
 /* HoN header */
 
-.hotBar h1 {} .hotBar .logo {
-    width: 300px;
+.hotBar {
+	text-align: center;
+}
+ .hotBar .logo {
+    width: 280px;
+	padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
 }
 .hotCount {
     display: inline-block;
@@ -142,7 +147,6 @@ footer {
     color: #999;
     text-align: center;
     display: table;
-    border-top: 1px solid #ccc;
 }
 .instructions .leftSide,
 .instructions .rightSide,
@@ -191,17 +195,19 @@ footer {
     -webkit-border-radius: 5px;
     border-radius: 5px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 10px solid #fff;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+	box-shadow: 0 1px 4px 2px rgba(0, 0, 0, .1);
+
     background: #f9f9f9;
     background: -moz-linear-gradient(-45deg, #f9f9f9 0%, #dbdbdb 100%);
     background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #f9f9f9), color-stop(100%, #dbdbdb));
     background: -webkit-linear-gradient(-45deg, #f9f9f9 0%, #dbdbdb 100%);
     background: -o-linear-gradient(-45deg, #f9f9f9 0%, #dbdbdb 100%);
     background: -ms-linear-gradient(-45deg, #f9f9f9 0%, #dbdbdb 100%);
-    background: linear-gradient(135deg, #f9f9f9 0%, #dbdbdb 100%);
+    background: linear-gradient(135deg, #f9f9f9 0%, #a8c4bb 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#dbdbdb', GradientType=1);
 }
 #RateHotorNot .listingList {
@@ -316,7 +322,7 @@ footer {
     height: 22px;
     cursor: pointer;
     float: right;
-    margin-top: 19px;
+    margin-top: 10px;
 }
 #HotList .reasonWhy {
     float: left;
@@ -379,7 +385,7 @@ footer {
 #HotRecommendations .recommendationModule {
     /**/
 }
-.recommendationModule .reasonWhy {
+.reasonWhy {
     font-size: 12px;
 }
 /* ==========================================================================
