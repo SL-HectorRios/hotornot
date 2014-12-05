@@ -37,6 +37,7 @@ hotOrNot.data = (function() {
     img.setAttribute('src', listing['images'][0]['imageURL']);
     leftSide.appendChild(img);
 
+    rightSide.appendChild(h2);
     rightSide.classList.add('rightSide');
 
     // TODO start & end dates
@@ -50,12 +51,11 @@ hotOrNot.data = (function() {
       field.textContent = listing[attribute];
 
       rightSide.appendChild(field);
-      rightSide.appendChild(h2);
     }
 
     clearFix.appendChild(leftSide);
     clearFix.appendChild(rightSide);
-	
+
     li.appendChild(clearFix);
 
     li.setAttribute('data-listingid', listing['id']);
@@ -72,6 +72,31 @@ hotOrNot.data = (function() {
 
       allListings = _data['results'];
       insertListings(allListings);
+    });
+  };
+
+  var ajaxRecommendations = function() {
+    var listings = getLikedListings() || '';
+
+    if (!listings) return;
+
+    var recommendations = [];
+
+    $.ajax({
+      url: 'fixtures/all_listings.json'
+    }).done(function(data) {
+      var _data = JSON.parse(data);
+
+      allListings = _data['results'];
+
+      for (var i = 0, length = listings.length; i < length; i++) {
+        var listingId = listings[i];
+        var listingObj = allListings.filter(function(l) { return l['id'] == listingId; });
+
+        if (listingObj && listingObj.length > 0) {
+          console.log(listingObj[0]);
+        }
+      }
     });
   };
 
@@ -137,6 +162,7 @@ hotOrNot.data = (function() {
     },
     addToLikedList: addToLikedList,
     listingsLiked: getLikedListings,
-    loadListingsLiked: setListingsLiked
+    loadListingsLiked: setListingsLiked,
+    loadRecommendations: ajaxRecommendations
   };
 })();

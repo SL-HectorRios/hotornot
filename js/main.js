@@ -12,12 +12,19 @@ var isListingsLikedPage = function() {
   return window.location.href.toLowerCase().indexOf('hot_list') > -1;
 };
 
+var isRecommendationPage = function() {
+  return window.location.href.toLowerCase().indexOf('recommendation') > -1;
+};
+
 $(function() {
   if (isAppPage())
     hotOrNot.data.init();
 
   if (isListingsLikedPage())
     hotOrNot.data.loadListingsLiked();
+
+  if (isRecommendationPage())
+    hotOrNot.data.loadRecommendations();
 
   $(document).on('listingsLoaded', function() {
     if (!isListingsLikedPage())
