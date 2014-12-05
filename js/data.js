@@ -81,6 +81,7 @@ hotOrNot.data = (function() {
     if (!listings) return;
 
     var recommendations = [];
+    var listing;
 
     $.ajax({
       url: 'fixtures/all_listings.json'
@@ -94,29 +95,30 @@ hotOrNot.data = (function() {
       for (var i = 0, length = listings.length; i < length; i++) {
         var listingId = listings[i];
         var listingObj = allListings.filter(function(l) { return l['id'] == listingId; });
-        var _deptId = listingObj[0]['departments'][0]['id'];
 
-        if (listingObj && listingObj.length > 0 && deptId != _deptId) {
-          deptId = _deptId; // this listing's is now the main category
-          var apiUrl = 'http://qlweb01api.shoplocal.com/retail/85acb68aba7b3e16/v1/listings.json?storeid=2401006&departmentid=' + deptId + '&require=ListingWithImage&limit=3';
-          $.ajax({
-            url: apiUrl
-          }).done(function(response) {
-            var _data = response['results'];
-            for (var n = 0, count = _data.length; n < count; n++) {
-              recommendations.push(_data[n]);
-            }
+        if (listingObj && listingObj.length > 0) {
+          var _deptId = listingObj[0]['departments'][0]['id'];
+          if (!listing) {
+            listing = listingObj[0];
+            $('#HotRecommendations .reasonWhy strong').text(listing['title']);
+          }
+          if (deptId != _deptId) {
+            deptId = _deptId; // this listing's is now the main category
+            var apiUrl = 'http://qlweb01api.shoplocal.com/retail/85acb68aba7b3e16/v1/listings.json?storeid=2401006&departmentid=' + deptId + '&require=ListingWithImage&limit=3';
+            $.ajax({
+              url: apiUrl
+            }).done(function(response) {
+              var _data = response['results'];
+              for (var n = 0, count = _data.length; n < count; n++) {
+                recommendations.push(_data[n]);
+              }
 
-            buildRecommendationContainer();
-            insertListings(recommendations);
-          });
+              insertListings(recommendations);
+            });
+          }
         }
       }
     });
-  };
-
-  var buildRecommendationContainer = function() {
-
   };
 
   var addToLikedList = function (listing) {
