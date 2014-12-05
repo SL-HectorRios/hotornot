@@ -4,8 +4,20 @@ var hotOrNot = hotOrNot || {};
 hotOrNot.data = hotOrNot.data || {};
 hotOrNot.animations = hotOrNot.animations || {};
 
+var isAppPage = function() {
+  return window.location.href.toLowerCase().indexOf('hot_or_not') > -1;
+};
+
+var isListingsLikedPage = function() {
+  return window.location.href.toLowerCase().indexOf('hot_list') > -1;
+};
+
 $(function() {
-  hotOrNot.data.init();
+  if (isAppPage())
+    hotOrNot.data.init();
+
+  if (isListingsLikedPage())
+    hotOrNot.data.loadListingsLiked();
 
   $(document).on('listingsLoaded', function() {
     hotOrNot.animations.init();

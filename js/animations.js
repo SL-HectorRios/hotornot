@@ -33,16 +33,15 @@ hotOrNot.animations = (function() {
 
     // Add an event listener for when a card is moved from the stack
     stack.on('throwout', function(e) {
-      if (e.throwDirection == gajus.Swing.Card.DIRECTION_RIGHT) {
-        $(document).trigger({ type: 'LISTING_LIKED', listing: e.target});
-      }
-	
-		e.target.remove();
-    });
+      var eventType = (e.throwDirection == gajus.Swing.Card.DIRECTION_RIGHT) ? 'LISTING_LIKED' : 'LISTING_DISLIKED';
 
-    //stack.on('thrown', function(e) {
-      //console.log('Card has snapped back to the stack.');
-    //});
+      $(document).trigger({ type: eventType, listing: e.target});
+
+      e.target.remove();
+      // remove the card from memory
+      var card = stack.getCard(e.target);
+      card.destroy();
+    });
   };
 
   return {

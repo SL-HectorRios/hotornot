@@ -5,6 +5,7 @@ var hotOrNot = hotOrNot || {};
 hotOrNot.data = (function() {
   var allListings = [];
   var listingList = document.getElementById('listingList');
+
   var listingsLiked = [];
 
   var insertListings = function(listings) {
@@ -57,7 +58,8 @@ hotOrNot.data = (function() {
     li.appendChild(clearFix);
 
     li.setAttribute('data-listingid', listing['id']);
-    li.setAttribute('data-departmentid', listing['departments'][0]['id'])
+    li.setAttribute('data-departmentid', listing['departments'][0]['id']);
+
     listingList.appendChild(li);
   };
 
@@ -74,33 +76,55 @@ hotOrNot.data = (function() {
 
   var addToLikedList = function (listing) {
     var listingId = listing.getAttribute('data-listingid');
-    var departmentId = listing.getAttribute('data-departmentid');
-    var listingHash = {
-      listingId: listingId,
-      departmentId: departmentId
-    };
 
     var hasThisListing = false;
-    
+
     for (var i = 0, length = listingsLiked.length; i < length; i++) {
       if (hasThisListing) break;
 
-      if (listingHash['listingId'] === listingsLiked[i]['listingId'])
+      if (listingId === listingsLiked[i])
         hasThisListing = true;
     }
 
     if (!hasThisListing) {
-      listingsLiked.push(listingHash);
+      listingsLiked.push(listingId);
       $.cookie('listingsLiked', JSON.stringify(listingsLiked));
     }
-	
+
 	if (listingsLiked.length == 4) {
 		$('#recommendationCallout').show();
 	}
   };
 
   var getLikedListings = function() {
-    return listingsLiked;
+    return JSON.parse($.cookie('listingsLiked'));
+  };
+
+  var setListingsLiked = function() {
+    var listings = getLikedListings() || '';
+
+    if (!listings) return;
+
+    var listingObjects = [];
+
+    $.ajax({
+      url: 'fixtures/all_listings.json'
+    }).done(function(data) {
+      var _data = JSON.parse(data);
+
+      allListings = _data['results'];
+
+      for (var i = 0, length = listings.length; i < length; i++) {
+        var listingId = listings[i];
+        var listingObj = allListings.filter(function(l) { return l['id'] == listingId; });
+
+        if (listingObj && listingObj.length > 0) {
+          listingObjects.push(listingObj[0]);
+        }
+      }
+
+      insertListings(listingObjects);
+    });
   };
 
   return {
@@ -111,6 +135,7 @@ hotOrNot.data = (function() {
       return allListings;
     },
     addToLikedList: addToLikedList,
-    listingsLiked: getLikedListings
+    listingsLiked: getLikedListings,
+    loadListingsLiked: setListingsLiked
   };
 })();
