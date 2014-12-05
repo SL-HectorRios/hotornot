@@ -32,6 +32,7 @@ hotOrNot.data = (function() {
     var rightSide = div.cloneNode();
 
     clearFix.classList.add('clearfix');
+	clearFix.classList.add('listingInfo');
 
     leftSide.classList.add('leftSide');
     img.setAttribute('src', listing['images'][0]['imageURL']);
@@ -42,6 +43,8 @@ hotOrNot.data = (function() {
 
     // TODO start & end dates
     var attributesToParse = ['originalDeal', 'deal', 'additionalDealInformation'];
+	
+    rightSide.appendChild(h2);
 
     // adds all the fields to the right side
     for (var i = 0, limit = attributesToParse.length, attribute; i < limit; i++) {
