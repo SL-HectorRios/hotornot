@@ -191,11 +191,18 @@ footer {
     -webkit-border-radius: 5px;
     border-radius: 5px;
     margin-bottom: 10px;
-    background: #efefef;
     border: 1px solid #ccc;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    background: #f9f9f9;
+    background: -moz-linear-gradient(-45deg, #f9f9f9 0%, #dbdbdb 100%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #f9f9f9), color-stop(100%, #dbdbdb));
+    background: -webkit-linear-gradient(-45deg, #f9f9f9 0%, #dbdbdb 100%);
+    background: -o-linear-gradient(-45deg, #f9f9f9 0%, #dbdbdb 100%);
+    background: -ms-linear-gradient(-45deg, #f9f9f9 0%, #dbdbdb 100%);
+    background: linear-gradient(135deg, #f9f9f9 0%, #dbdbdb 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#dbdbdb', GradientType=1);
 }
 #RateHotorNot .listingList {
     height: 190px;
@@ -220,26 +227,29 @@ footer {
     z-index: 3;
 }
 #ListingContain .listingStack:before {
-    content:"";
-    display:block;
+    content: "";
+    display: block;
     bottom: -9px;
     left: 3px;
     z-index: 2;
 }
 #ListingContain .listingStack:after {
-    content:"";
-    display:block;
+    content: "";
+    display: block;
     bottom: -9px;
     left: -2px;
     z-index: 1;
 }
 .listingList img {
     width: 100%;
+    -webkit-box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .3);
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .3);
 }
 .listingList .leftSide {
-    width: 120px;
+    width: 118px;
     float: left;
-    padding-right: 8px;
+    margin-right: 8px;
+    border: 1px solid #efefef;
 }
 .listingList .rightSide {
     width: 140px;
@@ -268,6 +278,7 @@ footer {
     color: #999;
 }
 /* Share options */
+
 .emailList {
     background: #00573c;
     /* Old browsers */
@@ -299,11 +310,11 @@ footer {
     width: 22px;
     height: 22px;
     cursor: pointer;
-	float: right;
-	margin-top: 19px;
+    float: right;
+    margin-top: 19px;
 }
 #HotList .reasonWhy {
-	float: left;
+    float: left;
 }
 #recommendationCallout {
     background: #00573c;
@@ -336,8 +347,8 @@ footer {
     left: 0;
     font-size: 12px;
     width: 100%;
-	display: none;
-	cursor: pointer;
+    display: none;
+    cursor: pointer;
 }
 #recommendationCallout a {
     padding: 10px;
