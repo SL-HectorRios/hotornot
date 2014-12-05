@@ -93,6 +93,10 @@ hotOrNot.data = (function() {
       listingsLiked.push(listingHash);
       $.cookie('listingsLiked', JSON.stringify(listingsLiked));
     }
+	
+	if (listingsLiked.length == 6) {
+		$('#recommendationCallout').show();
+	}
   };
 
   var getLikedListings = function() {

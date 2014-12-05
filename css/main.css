@@ -299,12 +299,21 @@ footer {
     left: 0;
     font-size: 12px;
     width: 100%;
+	display: none;
 }
 #recommendationCallout a {
     padding: 10px;
     display: block;
     color: white;
     text-decoration: none;
+	width: 50%;
+	box-sizing: border-box;
+	float: left;
+	line-height: 1;
+}
+#recommendationCallout a.hotCount {
+	float: right;
+	border-left: 1px solid #fff;
 }
 /* End share options */
 /* recommendations
