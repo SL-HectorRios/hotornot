@@ -117,8 +117,10 @@ footer {
 .HotOrNotCallout {
     display: block;
     text-decoration: none;
-    text-align: center;
-    padding: 10px;
+    border-bottom:10px solid #dedede;
+}
+.HotOrNotCallout img {
+    width:300px;
 }
 /* Hot or Not   ========================================================================== */
 /* HoN header */
@@ -179,9 +181,11 @@ footer {
 }
 #listingList li {
     padding: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
     margin-bottom: 10px;
     background: white;
-    border: 1px solid #999;
+    border: 1px solid #ccc;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
