@@ -173,13 +173,13 @@ footer {
     padding-bottom: 10px;
     margin: 0 auto;
 }
-#listingList {
+.listingList {
     margin: 0;
     padding: 0;
     list-style: none;
     position: relative;
 }
-#listingList li {
+.listingList li {
     padding: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -190,56 +190,50 @@ footer {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-#RateHotorNot #listingList {
+#RateHotorNot .listingList {
     height: 220px;
 }
-#RateHotorNot #listingList li {
+#RateHotorNot .listingList li {
     height: 220px;
     position: absolute;
     top: 0;
     left: 0;
 }
-#listingList img {
+.listingList img {
     width: 100%;
 }
-#listingList .leftSide {
+.listingList .leftSide {
     width: 120px;
     float: left;
     padding-right: 8px;
 }
-#listingList .rightSide {
+.listingList .rightSide {
     width: 140px;
     float: left;
 }
-#listingList h2 {
+.listingList h2 {
     font-size: 16px;
     margin: 0 0 10px 0;
 }
-#listingList img {
+.listingList img {
     /**/
 }
-#listingList .originalDeal {
+.listingList .originalDeal {
     text-decoration: line-through;
     font-size: 12px;
 }
-#listingList .deal {
+.listingList .deal {
     font-size: 24px;
     font-weight: bold
 }
-#listingList .additionalDealInformation {
+.listingList .additionalDealInformation {
     font-size: 12px;
 }
-#listingList .listingValid {
+.listingList .listingValid {
     font-size: 12px;
     color: #999;
 }
 /* Share options */
-
-#shareContain {
-    position: fixed;
-    bottom: 15px;
-    right: 20px;
-}
 .emailList {
     background: #00573c;
     /* Old browsers */
@@ -265,12 +259,17 @@ footer {
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#317762', endColorstr='#00573d', GradientType=0);
     /* IE6-9 */
     
-    box-shadow: 0 0 4px 1px rgba(0, 0, 0, .4);
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, .2);
     border: 2px solid #00573c;
     padding: 5px;
     width: 22px;
     height: 22px;
     cursor: pointer;
+	float: right;
+	margin-top: 19px;
+}
+#HotList .reasonWhy {
+	float: left;
 }
 #recommendationCallout {
     background: #00573c;
@@ -304,6 +303,7 @@ footer {
     font-size: 12px;
     width: 100%;
 	display: none;
+	cursor: pointer;
 }
 #recommendationCallout a {
     padding: 10px;

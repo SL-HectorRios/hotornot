@@ -94,7 +94,7 @@ hotOrNot.data = (function() {
       $.cookie('listingsLiked', JSON.stringify(listingsLiked));
     }
 	
-	if (listingsLiked.length == 6) {
+	if (listingsLiked.length == 4) {
 		$('#recommendationCallout').show();
 	}
   };
@@ -114,4 +114,3 @@ hotOrNot.data = (function() {
     listingsLiked: getLikedListings
   };
 })();
-
