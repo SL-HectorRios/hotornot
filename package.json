@@ -1,0 +1,12 @@
+{
+  "name": "hotornot",
+  "version": "1.0.0",
+  "description": "Allow users to rate advertisements to receive meaningful suggestions",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SL-HectorRios/hotornot"
+  }
+}
