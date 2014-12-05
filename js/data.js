@@ -107,11 +107,12 @@ hotOrNot.data = (function() {
           }
           if (deptId != _deptId) {
             deptId = _deptId; // this listing's is now the main category
-            var apiUrl = 'http://qlweb01api.shoplocal.com/retail/85acb68aba7b3e16/v1/listings.json?storeid=2401006&departmentid=' + deptId + '&require=ListingWithImage&limit=3';
+            //var apiUrl = 'http://qlweb01api.shoplocal.com/retail/85acb68aba7b3e16/v1/listings.json?storeid=2401006&departmentid=' + deptId + '&require=ListingWithImage&limit=3';
+            var apiUrl = 'fixtures/shotgun_listings.json'
             $.ajax({
               url: apiUrl
             }).done(function(response) {
-              var _data = response['results'];
+              var _data = JSON.parse(response)['results'];
               for (var n = 0, count = _data.length; n < count; n++) {
                 recommendations.push(_data[n]);
               }
