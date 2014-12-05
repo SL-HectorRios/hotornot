@@ -48,13 +48,14 @@ hotOrNot.data = (function() {
       var field = div.cloneNode();
       field.classList.add(attribute);
       field.textContent = listing[attribute];
+
       rightSide.appendChild(field);
+      rightSide.appendChild(h2);
     }
 
     clearFix.appendChild(leftSide);
     clearFix.appendChild(rightSide);
-
-    li.appendChild(h2);
+	
     li.appendChild(clearFix);
 
     li.setAttribute('data-listingid', listing['id']);

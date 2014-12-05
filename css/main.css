@@ -271,8 +271,9 @@ footer {
     float: left;
 }
 .listingList h2 {
-    font-size: 16px;
+    font-size: 15px;
     margin: 0 0 4px 0;
+	line-height: 1.2;
 }
 .listingList img {
     /**/
@@ -283,7 +284,8 @@ footer {
 }
 .listingList .deal {
     font-size: 24px;
-    font-weight: bold
+    font-weight: bold;
+	line-height: 1.2;
 }
 .listingList .additionalDealInformation {
     font-size: 12px;
