@@ -36,6 +36,8 @@ hotOrNot.animations = (function() {
       if (e.throwDirection == gajus.Swing.Card.DIRECTION_RIGHT) {
         $(document).trigger({ type: 'LISTING_LIKED', listing: e.target});
       }
+	
+		e.target.remove();
     });
 
     //stack.on('thrown', function(e) {
