@@ -376,20 +376,25 @@ footer {
     left: 0;
     font-size: 12px;
     width: 100%;
-    display: none;
     cursor: pointer;
+}
+#RateHotorNot #recommendationCallout {
+    display: none;
 }
 #recommendationCallout a {
     padding: 10px;
     display: block;
     color: white;
     text-decoration: none;
-    width: 50%;
+    width: 100%;
     box-sizing: border-box;
     float: left;
     line-height: 1;
 }
-#recommendationCallout a.hotCount {
+#RateHotorNot #recommendationCallout a {
+    width: 50%;
+}
+#RateHotorNot #recommendationCallout a.hotCount {
     float: right;
     border-left: 1px solid #fff;
 }
