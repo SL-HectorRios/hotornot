@@ -27,7 +27,7 @@ $(function() {
     hotOrNot.data.loadRecommendations();
 
   $(document).on('listingsLoaded', function() {
-    if (!isListingsLikedPage())
+    if (!isListingsLikedPage() && !isRecommendationPage())
       hotOrNot.animations.init();
   });
 
